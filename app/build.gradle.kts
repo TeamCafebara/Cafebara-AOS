@@ -4,6 +4,11 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.ktlint)
+    alias(libs.plugins.kotlin.kapt)
+    alias(libs.plugins.kotlin.serialization)
+    alias(libs.plugins.kotlin.parcelize)
+    alias(libs.plugins.google.firebase.crashlytics)
+    alias(libs.plugins.dagger.hilt)
 }
 val properties = Properties()
 properties.load(project.rootProject.file("local.properties").inputStream())
@@ -46,12 +51,6 @@ android {
         dataBinding = true
         buildConfig = true
     }
-    packaging {
-        resources {
-            excludes += "/META-INF/{AL2.0,LGPL2.1}"
-            excludes += "/META-INF/gradle/incremental.annotation.processors"
-        }
-    }
 }
 
 dependencies {
@@ -77,7 +76,7 @@ dependencies {
 
     // Hilt
     implementation(libs.hilt)
-    implementation(libs.hilt.compiler)
+    kapt(libs.hilt.compiler)
 
     // Timber
     implementation(libs.timber)
