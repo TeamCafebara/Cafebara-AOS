@@ -5,7 +5,9 @@ import androidx.activity.viewModels
 import com.omg.cafebara.R
 import com.omg.cafebara.databinding.ActivityDummyBinding
 import com.omg.cafebara.util.base.BindingActivity
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class DummyActivity : BindingActivity<ActivityDummyBinding>(R.layout.activity_dummy) {
     private val dummyViewModel by viewModels<DummyViewModel>()
     override fun onCreate(savedInstanceState: Bundle?) {
