@@ -10,6 +10,7 @@ plugins {
     alias(libs.plugins.google.firebase.crashlytics)
     alias(libs.plugins.dagger.hilt)
 }
+
 val properties = Properties()
 properties.load(project.rootProject.file("local.properties").inputStream())
 
