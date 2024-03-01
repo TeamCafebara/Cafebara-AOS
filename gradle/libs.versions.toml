@@ -28,7 +28,7 @@ espresso-core = "3.5.1"
 dagger-hilt = "2.48"
 
 # Third Party
-ktlint = "11.0.0"
+ktlint = "11.5.1"
 coil = "2.4.0"
 timber = "5.0.1"
 okhttp = "4.11.0"
