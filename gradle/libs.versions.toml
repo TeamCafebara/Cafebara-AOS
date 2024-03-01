@@ -25,7 +25,7 @@ androidx-test-ext-junit = "1.1.5"
 espresso-core = "3.5.1"
 
 # Dagger-Hilt
-dagger-hilt = "2.48"
+dagger-hilt = "2.50"
 
 # Third Party
 ktlint = "11.5.1"
@@ -54,7 +54,7 @@ google-firebase-bom = { group = "com.google.firebase", name = "firebase-bom", ve
 google-firebase-crashlytics = { group = "com.google.firebase", name = "firebase-crashlytics-ktx" }
 
 # Test
-junit = { group = "juint", name = "junit", version.ref = "junit" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-test-ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidx-test-ext-junit" }
 espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espresso-core" }
 
