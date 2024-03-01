@@ -1,7 +1,6 @@
 package com.omg.cafebara.presentation.dummy
 
 import android.os.Bundle
-import androidx.activity.viewModels
 import com.omg.cafebara.R
 import com.omg.cafebara.databinding.ActivityDummyBinding
 import com.omg.cafebara.util.base.BindingActivity
@@ -9,11 +8,8 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class DummyActivity : BindingActivity<ActivityDummyBinding>(R.layout.activity_dummy) {
-    private val dummyViewModel by viewModels<DummyViewModel>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        binding.viewModel = dummyViewModel
     }
 
     override fun onDestroy() {
