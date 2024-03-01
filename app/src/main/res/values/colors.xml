@@ -2,4 +2,45 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="background">#FBFCFF</color>
+    <color name="gray8">#18191A</color>
+    <color name="gray7">#252628</color>
+    <color name="gray6">#3A3B3E</color>
+    <color name="gray5">#545760</color>
+    <color name="gray4">#7A7D87</color>
+    <color name="gray3">#91959D</color>
+    <color name="gray2">#BDC1C8</color>
+    <color name="gray1">#E2E5EB</color>
+
+    <color name="blue100">#4681F3</color>
+    <color name="blue75">#74A0F6</color>
+    <color name="blue50">#A2C0F9</color>
+    <color name="blue25">#D1DFFC</color>
+    <color name="blue10">#ECF2FE</color>
+
+    <color name="error">#F75656</color>
+
+    <color name="orange100">#FFA740</color>
+    <color name="orange70">#FFBD70</color>
+    <color name="orange50">#FFD39F</color>
+    <color name="orange25">#FFE9CF</color>
+    <color name="orange10">#FFF6EC</color>
+
+    <color name="toast_message_color">#212121</color>
+    
+    <color name="label_text1">#A9A314</color>
+    <color name="label_text2">#7827C9</color>
+    <color name="label_text3">#FF4F4F</color>
+    <color name="label_text4">#D14892</color>
+    <color name="label_text5">#6CB731</color>
+    <color name="label_text6">#1F9BB6</color>
+    
+    <color name="label1">#FEFBE9</color>
+    <color name="label2">#F6F1FD</color>
+    <color name="label3">#FFF3F3</color>
+    <color name="label4">#FFF3FD</color>
+    <color name="label5">#F6FEF3</color>
+    <color name="label6">#EAFBFA</color>
+
 </resources>

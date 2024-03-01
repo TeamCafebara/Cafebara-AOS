@@ -4,7 +4,13 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.ktlint)
+    alias(libs.plugins.kotlin.kapt)
+    alias(libs.plugins.kotlin.serialization)
+    alias(libs.plugins.kotlin.parcelize)
+    alias(libs.plugins.google.firebase.crashlytics)
+    alias(libs.plugins.dagger.hilt)
 }
+
 val properties = Properties()
 properties.load(project.rootProject.file("local.properties").inputStream())
 
@@ -14,7 +20,7 @@ android {
 
     defaultConfig {
         applicationId = "com.omg.cafebara"
-        minSdk = 24
+        minSdk = 28
         targetSdk = 33
         versionCode = 1
         versionName = "1.0"
@@ -68,6 +74,10 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.espresso.core)
+
+    // Hilt
+    implementation(libs.hilt)
+    kapt(libs.hilt.compiler)
 
     // Timber
     implementation(libs.timber)

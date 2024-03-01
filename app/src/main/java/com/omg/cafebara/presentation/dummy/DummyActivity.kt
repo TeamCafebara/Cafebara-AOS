@@ -5,17 +5,28 @@ import androidx.activity.viewModels
 import com.omg.cafebara.R
 import com.omg.cafebara.databinding.ActivityDummyBinding
 import com.omg.cafebara.util.base.BindingActivity
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class DummyActivity : BindingActivity<ActivityDummyBinding>(R.layout.activity_dummy) {
-    private val dummyViewModel by viewModels<DummyViewModel>()
+    private val viewModel: DummyViewModel by viewModels()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        binding.viewModel = dummyViewModel
+        binding.viewModel = viewModel
+        // binding.lifecycleOwner = this
+        // binding에서 LiveData를 사용할 경우 해당 코드 필요
     }
 
-    override fun onDestroy() {
-        // TODO adapter를 사용한다면 adapter를 해제시켜주세요.(Fragment라면 onDestroyView에서 해제시켜주면 됩니다.) ex) binding.rvDummy.adpater = null
-        super.onDestroy()
+    private fun initLayout() {
+        TODO("Not yet implemented")
+    }
+
+    private fun addListeners() {
+        TODO("Not yet implemented")
+    }
+
+    private fun addObservers() {
+        TODO("Not yet implemented")
     }
 }

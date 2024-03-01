@@ -6,7 +6,7 @@ import com.google.android.material.snackbar.Snackbar
 
 inline fun View.setOnSingleClickListener(
     delay: Long = 500L,
-    crossinline block: (View) -> Unit
+    crossinline block: (View) -> Unit,
 ) {
     var isClickable = true
     setOnClickListener { view ->
@@ -19,7 +19,6 @@ inline fun View.setOnSingleClickListener(
         }
     }
 }
-
 
 fun View.showSnackBar(message: String, isShort: Boolean = true) {
     val duration = if (isShort) Snackbar.LENGTH_SHORT else Snackbar.LENGTH_LONG
