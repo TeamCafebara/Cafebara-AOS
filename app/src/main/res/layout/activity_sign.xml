@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="com.omg.cafebara.presentation.type.EmployType" />
+
+        <variable
+            name="viewModel"
+            type="com.omg.cafebara.presentation.auth.SignViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_sign"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/layout_toolbar"
+            layout="@layout/view_toolbar" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/spacing20" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/spacing20" />
+
+        <TextView
+            android:id="@+id/tv_introduction"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:text="안녕하세요!\n카페바라 시작 전 선택해주세요"
+            android:textAppearance="@style/TextAppearance.HeadLine"
+            android:textColor="@color/gray7"
+            app:layout_constraintEnd_toEndOf="@id/gl_end"
+            app:layout_constraintStart_toStartOf="@id/gl_start"
+            app:layout_constraintTop_toBottomOf="@id/layout_toolbar" />
+
+        <View
+            android:id="@+id/view_center"
+            android:layout_width="2dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@id/btn_next"
+            app:layout_constraintEnd_toEndOf="@id/gl_end"
+            app:layout_constraintStart_toStartOf="@id/gl_start"
+            app:layout_constraintTop_toBottomOf="@id/tv_introduction" />
+
+        <include
+            android:id="@+id/include_employer"
+            layout="@layout/view_employ_filter"
+            selected="@{viewModel.employType == EmployType.EMPLOYER}"
+            android:layout_width="0dp"
+            android:layout_height="148dp"
+            android:layout_marginTop="28dp"
+            android:layout_marginEnd="11dp"
+            android:onClick="@{()->viewModel.setEmployType(EmployType.EMPLOYER)}"
+            app:employType="@{@string/sign_view_employer}"
+            app:layout_constraintEnd_toStartOf="@id/view_center"
+            app:layout_constraintStart_toStartOf="@id/tv_introduction"
+            app:layout_constraintTop_toBottomOf="@+id/tv_introduction" />
+
+        <include
+            android:id="@+id/include_employee"
+            layout="@layout/view_employ_filter"
+            selected="@{viewModel.employType == EmployType.EMPLOYEE}"
+            android:layout_width="0dp"
+            android:layout_height="148dp"
+            android:layout_marginStart="11dp"
+            android:layout_marginTop="28dp"
+            android:onClick="@{()->viewModel.setEmployType(EmployType.EMPLOYEE)}"
+            app:employType="@{@string/sign_view_employee}"
+            app:layout_constraintEnd_toEndOf="@id/tv_introduction"
+            app:layout_constraintStart_toEndOf="@id/view_center"
+            app:layout_constraintTop_toBottomOf="@id/tv_introduction" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_next"
+            style="@style/Widget.FullButton.Basic"
+            android:layout_width="0dp"
+            android:layout_marginBottom="8dp"
+            android:backgroundTint="@{viewModel.nextStatus ? @color/blue100 :@color/gray1}"
+            android:enabled="@{viewModel.nextStatus}"
+            android:text="@string/sign_view_to_next"
+            android:textAppearance="@style/TextAppearance.BodyMedium1"
+            android:textColor="@{viewModel.nextStatus ? @color/white :@color/gray2}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/gl_end"
+            app:layout_constraintStart_toStartOf="@id/gl_start" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
