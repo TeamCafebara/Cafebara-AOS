@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Cafebara</string>
+
+    <!--auth-->
+    <string name="sign_view_employer">사장님이에요</string>
+    <string name="sign_view_employee">직원이에요</string>
+    <string name="sign_view_to_next">다음으로</string>
 </resources>
