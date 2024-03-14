@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="employType"
+            type="com.omg.cafebara.presentation.type.EmployType" />
+        <variable
+            name="viewModel"
+            type="com.omg.cafebara.presentation.employee.auth.NameInputViewModel" />
+
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_input_name"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/layout_toolbar"
+            layout="@layout/view_toolbar" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/spacing20" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/spacing20" />
+
+        <TextView
+            android:id="@+id/tv_introduction_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:text="@{employType.titleRes}"
+            android:textAppearance="@style/TextAppearance.HeadLine"
+            android:textColor="@color/gray7"
+            app:layout_constraintEnd_toEndOf="@id/gl_end"
+            app:layout_constraintStart_toStartOf="@id/gl_start"
+            app:layout_constraintTop_toBottomOf="@id/layout_toolbar"
+            tools:text="@string/name_view_input_name_employee" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            app:layout_constraintEnd_toEndOf="@id/gl_end"
+            app:layout_constraintStart_toStartOf="@id/gl_start"
+            app:layout_constraintTop_toBottomOf="@id/tv_introduction_name">
+
+            <EditText
+                android:id="@+id/et_input_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@{viewModel.name.length() > 0? @drawable/background_name_not_edited : @drawable/background_name_edited}"
+                android:hint="실제 이름으로 입력해주세요!"
+                android:paddingVertical="15dp"
+                android:paddingStart="14dp"
+                android:text="@={viewModel.name}"
+                android:textAppearance="@style/TextAppearance.BodyMedium2"
+                android:textColorHint="@color/gray2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/iv_erase_all"
+                invisibility="@"
+                visibility="@{viewModel.name.length() > 0}"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="12dp"
+                android:onClick="@{()->viewModel.clickEraseAll()}"
+                android:padding="4dp"
+                android:src="@drawable/ic_erase_all"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_next"
+            style="@style/Widget.FullButton.Basic"
+            android:layout_width="0dp"
+            android:layout_marginBottom="8dp"
+            android:backgroundTint="@{viewModel.name.length() > 0 ? @color/blue100 :@color/gray1}"
+            android:enabled="@{viewModel.name.length() > 0}"
+            android:text="@string/sign_view_to_next"
+            android:textAppearance="@style/TextAppearance.BodyMedium1"
+            android:textColor="@{viewModel.name.length() > 0 ? @color/white :@color/gray2}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/gl_end"
+            app:layout_constraintStart_toStartOf="@id/gl_start" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
