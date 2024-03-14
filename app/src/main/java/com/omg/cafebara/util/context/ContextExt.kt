@@ -18,6 +18,7 @@ fun Context.showToast(message: String, isShort: Boolean = true) {
 fun Context.hideKeyboard(view: View) {
     val inputMethodManager = getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager
     inputMethodManager.hideSoftInputFromWindow(view.windowToken, 0)
+    view.clearFocus()
 }
 
 fun Context.stringOf(@StringRes resId: Int) = getString(resId)
