@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Cafebara</string>
+
+    <!--main-->
+    <string name="menu_title_home">홈</string>
+    <string name="menu_title_todo">투두</string>
+    <string name="menu_title_schedule">스케줄</string>
+    <string name="menu_title_work">출퇴근</string>
+    <string name="menu_title_mypage">마이페이지</string>
 </resources>
