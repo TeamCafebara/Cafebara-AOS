@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_home"
+        android:enabled="true"
+        android:icon="@drawable/selector_menu_home_icon"
+        android:title="@string/menu_title_home" />
+    <item
+        android:id="@+id/menu_todo"
+        android:enabled="true"
+        android:icon="@drawable/selector_menu_todo_icon"
+        android:title="@string/menu_title_todo" />
+    <item
+        android:id="@+id/menu_schedule"
+        android:enabled="true"
+        android:icon="@drawable/selector_menu_schedule_icon"
+        android:title="@string/menu_title_schedule" />
+    <item
+        android:id="@+id/menu_work"
+        android:enabled="true"
+        android:icon="@drawable/selector_menu_work_icon"
+        android:title="@string/menu_title_work" />
+    <item
+        android:id="@+id/menu_my_page"
+        android:enabled="true"
+        android:icon="@drawable/selector_menu_mypage_icon"
+        android:title="@string/menu_title_mypage" />
+</menu>
