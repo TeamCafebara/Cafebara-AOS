@@ -8,8 +8,15 @@
 
 
     <string name="name_view_input_name_employee">안녕하세요!\n다음으로 이름도 알려주세요</string>
-    <string name="name_view_input_name_employer">"반가워요 사장님!\n사장님의 성함을 알려주세요"요</string>
+    <string name="name_view_input_name_employer">"반가워요 사장님!\n사장님의 성함을 알려주세요"</string>
 
     <string name="code_view_check">코드 인증</string>
+    <string name="welcome_view_start_btn">시작하기</string>
 
+    <string name="welcome_view_intro">사장과 직원이 함께 보는\n카페바라, 같이 시작해 보아요!</string>
+
+    <string name="dialog_middle_alert_title">카페바라 알림을 받아보실 건가요?</string>
+    <string name="dialog_middle_alert_context">대타 요청에 대한 답변 및 공지사항에 관한\n알림이 보내질 예정이에요!</string>
+    <string name="dialog_middle_left_btn">안할래요</string>
+    <string name="dialog_middle_right_btn">할래요</string>
 </resources>
