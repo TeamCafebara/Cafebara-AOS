@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="dialogType"
+            type="com.omg.cafebara.presentation.type.DialogType" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="29dp"
+            android:background="@drawable/background_dialog"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/gl_start"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="30dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/gl_end"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="30dp" />
+
+            <TextView
+                android:id="@+id/tv_dialog_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:gravity="center"
+                android:text="@{dialogType.titleRes}"
+                android:textAppearance="@style/TextAppearance.BodyLarge"
+                android:textColor="@color/gray7"
+                app:layout_constraintEnd_toStartOf="@+id/gl_end"
+                app:layout_constraintStart_toStartOf="@+id/gl_start"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="카페바라 알림을 받아보실 건가요?" />
+
+            <TextView
+                android:id="@+id/tv_dialog_context"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="@{dialogType.contextRes}"
+                android:textAppearance="@style/TextAppearance.BodySmall"
+                android:textColor="@color/gray4"
+                app:layout_constraintEnd_toStartOf="@+id/gl_end"
+                app:layout_constraintStart_toStartOf="@+id/gl_start"
+                app:layout_constraintTop_toBottomOf="@id/tv_dialog_title"
+                tools:text="대타 요청에 대한 답변 및 공지사항에 관한\n알림이 보내질 예정이에요!" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_dialog_left"
+                style="@style/Widget.Material.Button.Basic"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginBottom="22dp"
+                android:height="48dp"
+                android:text="@{dialogType.leftBtnRes}"
+                android:textAppearance="@style/TextAppearance.BodyMedium2"
+                android:textColor="@color/gray4"
+                app:backgroundTint="@color/white"
+                app:cornerRadius="4dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/btn_dialog_right"
+                app:layout_constraintStart_toStartOf="@id/gl_start"
+                app:layout_constraintTop_toBottomOf="@id/tv_dialog_context"
+                app:strokeColor="@color/gray2"
+                app:strokeWidth="1dp"
+                tools:text="안할래요" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_dialog_right"
+                style="@style/Widget.Material.Button.Basic"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="10dp"
+                android:height="48dp"
+                android:text="@{dialogType.rightBtnRes}"
+                android:textAppearance="@style/TextAppearance.BodyMedium2"
+                android:textColor="@color/white"
+                app:backgroundTint="@color/blue100"
+                app:cornerRadius="4dp"
+                app:layout_constraintBottom_toBottomOf="@+id/btn_dialog_left"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/gl_end"
+                app:layout_constraintStart_toEndOf="@+id/btn_dialog_left"
+                app:layout_constraintTop_toTopOf="@+id/btn_dialog_left"
+                tools:text="아니오" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
