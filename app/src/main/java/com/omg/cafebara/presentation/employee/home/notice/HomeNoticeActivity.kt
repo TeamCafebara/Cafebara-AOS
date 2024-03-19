@@ -1,15 +1,15 @@
-package com.omg.cafebara.presentation.employee.home.information
+package com.omg.cafebara.presentation.employee.home.notice
 
 import android.os.Bundle
 import androidx.activity.viewModels
 import com.omg.cafebara.R
-import com.omg.cafebara.databinding.ActivityHomeInformationBinding
+import com.omg.cafebara.databinding.ActivityHomeNoticeBinding
 import com.omg.cafebara.util.base.BindingActivity
 
-class HomeInformationActivity :
-    BindingActivity<ActivityHomeInformationBinding>(R.layout.activity_home_information) {
+class HomeNoticeActivity :
+    BindingActivity<ActivityHomeNoticeBinding>(R.layout.activity_home_notice) {
 
-    private val viewModel by viewModels<HomeInformationViewModel>()
+    private val viewModel by viewModels<HomeNoticeViewModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,7 +23,7 @@ class HomeInformationActivity :
         val currentFragment = supportFragmentManager.findFragmentById(R.id.fcv_home_information)
         if (currentFragment == null) {
             supportFragmentManager.beginTransaction()
-                .add(R.id.fcv_home_information, HomeInformationListFragment())
+                .add(R.id.fcv_home_information, HomeNoticeListFragment())
                 .commit()
         }
     }

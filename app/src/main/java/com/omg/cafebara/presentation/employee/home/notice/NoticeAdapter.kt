@@ -1,10 +1,10 @@
-package com.omg.cafebara.presentation.employee.home.information
+package com.omg.cafebara.presentation.employee.home.notice
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.omg.cafebara.databinding.ItemHomeInformationBinding
+import com.omg.cafebara.databinding.ItemHomeNoticeBinding
 import com.omg.cafebara.domain.model.NoticeData
 import com.omg.cafebara.util.view.ItemDiffCallback
 
@@ -16,7 +16,7 @@ class NoticeAdapter :
         )
     ) {
 
-    class NoticeViewHolder(private val binding: ItemHomeInformationBinding) :
+    class NoticeViewHolder(private val binding: ItemHomeNoticeBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun onBind(data: NoticeData) {
             binding.item = data
@@ -25,7 +25,7 @@ class NoticeAdapter :
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NoticeViewHolder {
-        val binding = ItemHomeInformationBinding.inflate(
+        val binding = ItemHomeNoticeBinding.inflate(
             LayoutInflater.from(parent.context),
             parent,
             false

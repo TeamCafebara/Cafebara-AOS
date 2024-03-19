@@ -1,11 +1,11 @@
-package com.omg.cafebara.presentation.employee.home.information
+package com.omg.cafebara.presentation.employee.home.notice
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.omg.cafebara.domain.model.NoticeData
 
-class HomeInformationListViewModel : ViewModel() {
+class HomeNoticeListViewModel : ViewModel() {
 
     private val _mockNoticeData: MutableLiveData<List<NoticeData>> = MutableLiveData(
         mutableListOf(

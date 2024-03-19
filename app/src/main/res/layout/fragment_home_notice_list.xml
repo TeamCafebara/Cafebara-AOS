@@ -6,7 +6,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.omg.cafebara.presentation.employee.home.information.HomeInformationListViewModel" />
+            type="com.omg.cafebara.presentation.employee.home.notice.HomeNoticeListViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -22,7 +22,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            tools:listitem="@layout/item_home_information" />
+            tools:listitem="@layout/item_home_notice" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -1,17 +1,17 @@
-package com.omg.cafebara.presentation.employee.home.information
+package com.omg.cafebara.presentation.employee.home.notice
 
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.omg.cafebara.R
-import com.omg.cafebara.databinding.FragmentHomeInformationListBinding
+import com.omg.cafebara.databinding.FragmentHomeNoticeListBinding
 import com.omg.cafebara.util.base.BindingFragment
 
-class HomeInformationListFragment :
-    BindingFragment<FragmentHomeInformationListBinding>(R.layout.fragment_home_information_list) {
+class HomeNoticeListFragment :
+    BindingFragment<FragmentHomeNoticeListBinding>(R.layout.fragment_home_notice_list) {
 
-    private val viewModel by viewModels<HomeInformationListViewModel>()
+    private val viewModel by viewModels<HomeNoticeListViewModel>()
 
     private var _noticeAdapter: NoticeAdapter? = null
     private val noticeAdapter
