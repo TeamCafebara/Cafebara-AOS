@@ -15,7 +15,7 @@
         android:layout_height="wrap_content">
 
         <ImageView
-            android:id="@+id/iv_home_information_notice_type"
+            android:id="@+id/iv_home_notice_type"
             android:layout_width="52dp"
             android:layout_height="24dp"
             android:background="@{item.noticeType.equals(@string/home_information_notice_type) ? @drawable/shape_orange_fill_12_rect : @drawable/shape_gray2_fill_12_rect}"
@@ -25,33 +25,33 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
-            android:id="@+id/tv_home_information_notice_type"
+            android:id="@+id/tv_home_notice_type"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/white"
             android:textAppearance="@style/TextAppearance.BodyMedium2"
             android:background="@android:color/transparent"
             android:text="@{item.noticeType}"
-            app:layout_constraintTop_toTopOf="@id/iv_home_information_notice_type"
-            app:layout_constraintBottom_toBottomOf="@id/iv_home_information_notice_type"
-            app:layout_constraintStart_toStartOf="@id/iv_home_information_notice_type"
-            app:layout_constraintEnd_toEndOf="@id/iv_home_information_notice_type"
+            app:layout_constraintTop_toTopOf="@id/iv_home_notice_type"
+            app:layout_constraintBottom_toBottomOf="@id/iv_home_notice_type"
+            app:layout_constraintStart_toStartOf="@id/iv_home_notice_type"
+            app:layout_constraintEnd_toEndOf="@id/iv_home_notice_type"
             tools:text="필독독" />
 
         <TextView
-            android:id="@+id/tv_home_information_list_title"
+            android:id="@+id/tv_home_notice_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/gray7"
             android:textAppearance="@style/TextAppearance.BodyMedium2"
             android:layout_marginTop="10dp"
             android:text="@{item.noticeTitle}"
-            app:layout_constraintTop_toBottomOf="@id/iv_home_information_notice_type"
-            app:layout_constraintStart_toStartOf="@id/iv_home_information_notice_type"
+            app:layout_constraintTop_toBottomOf="@id/iv_home_notice_type"
+            app:layout_constraintStart_toStartOf="@id/iv_home_notice_type"
             tools:text="생크림 안 만들고 가면 해고입니다" />
 
         <TextView
-            android:id="@+id/tv_home_information_list_date"
+            android:id="@+id/tv_home_notice_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/gray2"
@@ -59,8 +59,8 @@
             android:text="@{item.noticeModifiedAt}"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="12dp"
-            app:layout_constraintTop_toBottomOf="@id/tv_home_information_list_title"
-            app:layout_constraintStart_toStartOf="@id/tv_home_information_list_title"
+            app:layout_constraintTop_toBottomOf="@id/tv_home_notice_title"
+            app:layout_constraintStart_toStartOf="@id/tv_home_notice_title"
             app:layout_constraintBottom_toBottomOf="parent"
             tools:text="2024.03.19"/>
 

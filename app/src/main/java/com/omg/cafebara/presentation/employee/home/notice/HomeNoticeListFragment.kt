@@ -26,7 +26,7 @@ class HomeNoticeListFragment :
 
     private fun initMakeNoticeAdapter() {
         _noticeAdapter = NoticeAdapter()
-        binding.rcvHomeInformationList.apply {
+        binding.rcvHomeNoticeList.apply {
             layoutManager = LinearLayoutManager(requireContext())
             adapter = noticeAdapter
         }

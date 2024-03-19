@@ -14,16 +14,16 @@ class HomeNoticeActivity :
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding.viewModel = viewModel
-        binding.toolbarHomeInformation.title = getString(R.string.home_information_toolbar)
+        binding.toolbarHomeNotice.title = getString(R.string.home_information_toolbar)
 
         initFragment()
     }
 
     private fun initFragment() {
-        val currentFragment = supportFragmentManager.findFragmentById(R.id.fcv_home_information)
+        val currentFragment = supportFragmentManager.findFragmentById(R.id.fcv_home_notice)
         if (currentFragment == null) {
             supportFragmentManager.beginTransaction()
-                .add(R.id.fcv_home_information, HomeNoticeListFragment())
+                .add(R.id.fcv_home_notice, HomeNoticeListFragment())
                 .commit()
         }
     }
