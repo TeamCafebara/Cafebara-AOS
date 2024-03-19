@@ -19,11 +19,7 @@ class NoticeAdapter :
     class NoticeViewHolder(private val binding: ItemHomeInformationBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun onBind(data: NoticeData) {
-            with(binding) {
-                tvHomeInformationNoticeType.text = data.noticeType
-                tvHomeInformationListTitle.text = data.noticeTitle
-                tvHomeInformationListDate.text = data.noticeModifiedAt
-            }
+            binding.item = data
         }
     }
 
