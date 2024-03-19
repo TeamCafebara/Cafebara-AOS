@@ -3,12 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-
+        <variable
+            name="viewModel"
+            type="com.omg.cafebara.presentation.employee.home.information.HomeInformationViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/background">
 
         <include
             android:id="@+id/toolbar_home_information"
@@ -17,6 +20,7 @@
             layout="@layout/view_toolbar" />
 
         <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/fcv_home_information"
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:layout_constraintTop_toBottomOf="@id/toolbar_home_information"

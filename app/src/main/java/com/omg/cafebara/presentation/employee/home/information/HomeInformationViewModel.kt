@@ -1,4 +1,6 @@
 package com.omg.cafebara.presentation.employee.home.information
 
-class HomeInformationViewModel {
+import androidx.lifecycle.ViewModel
+
+class HomeInformationViewModel: ViewModel() {
 }
