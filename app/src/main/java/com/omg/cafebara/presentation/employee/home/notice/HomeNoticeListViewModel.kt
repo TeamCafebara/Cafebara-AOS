@@ -32,4 +32,12 @@ class HomeNoticeListViewModel : ViewModel() {
 
     val mockNoticeData: LiveData<List<NoticeData>>
         get() = _mockNoticeData
+
+    private val _selectedNoticeId: MutableLiveData<Int> = MutableLiveData()
+    val selectedNoticeId: LiveData<Int>
+        get() = _selectedNoticeId
+
+    fun setSelectedNoticeId(id: Int) {
+        _selectedNoticeId.value = id
+    }
 }

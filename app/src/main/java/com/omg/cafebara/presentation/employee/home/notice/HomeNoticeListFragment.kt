@@ -32,11 +32,18 @@ class HomeNoticeListFragment :
         }
 
         setNoticeList()
+        selectNotice()
     }
 
     private fun setNoticeList() {
         viewModel.mockNoticeData.observe(viewLifecycleOwner) {
             noticeAdapter.submitList(it)
+        }
+    }
+
+    private fun selectNotice() {
+        noticeAdapter.setOnNoticeDataClickListener {
+            viewModel.setSelectedNoticeId(it.noticeId)
         }
     }
 }
