@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.omg.cafebara.domain.model.NoticeData
 
-class HomeNoticeViewModel: ViewModel() {
+class HomeNoticeViewModel : ViewModel() {
 
     private val _mockNoticeData: MutableLiveData<List<NoticeData>> = MutableLiveData(
         mutableListOf(

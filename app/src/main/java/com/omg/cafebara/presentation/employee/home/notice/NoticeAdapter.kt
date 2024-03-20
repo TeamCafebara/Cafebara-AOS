@@ -10,7 +10,7 @@ import com.omg.cafebara.util.view.ItemDiffCallback
 
 class NoticeAdapter :
     ListAdapter<NoticeData, NoticeAdapter.NoticeViewHolder>(
-        ItemDiffCallback<NoticeData>(
+        ItemDiffCallback(
             onItemsTheSame = { old, new -> old.noticeId == new.noticeId },
             onContentsTheSame = { old, new -> old == new }
         )

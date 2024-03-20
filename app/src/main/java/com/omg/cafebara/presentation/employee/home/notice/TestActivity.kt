@@ -8,7 +8,7 @@ import com.omg.cafebara.presentation.employee.home.notice.HomeNoticeActivity.Com
 import com.omg.cafebara.presentation.employee.home.notice.HomeNoticeActivity.Companion.NOTICE_ID_DEFAULT
 import com.omg.cafebara.util.base.BindingActivity
 
-class TestActivity: BindingActivity<ActivityTestBinding>(R.layout.activity_test) {
+class TestActivity : BindingActivity<ActivityTestBinding>(R.layout.activity_test) {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
