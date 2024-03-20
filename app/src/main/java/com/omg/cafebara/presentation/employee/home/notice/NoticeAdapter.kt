@@ -21,7 +21,7 @@ class NoticeAdapter :
     inner class NoticeViewHolder(private val binding: ItemHomeNoticeBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun onBind(data: NoticeData) {
-            with (binding) {
+            with(binding) {
                 item = data
                 root.setOnClickListener {
                     onItemClickListener?.let { it(data) }
