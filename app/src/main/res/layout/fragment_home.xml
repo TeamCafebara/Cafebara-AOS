@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="20dp"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintGuide_end="20dp" />
+
+
+        <include
+            android:id="@+id/toolbar_main"
+            layout="@layout/view_toolbar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:title="@{@string/menu_title_home}" />
+
+        <ImageView
+            android:id="@+id/iv_home_notice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="2dp"
+            android:layout_marginEnd="12dp"
+            android:paddingVertical="12dp"
+            android:paddingStart="19dp"
+            android:paddingEnd="5dp"
+            android:src="@drawable/ic_alarm"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/horizontal_calendar"
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:gravity="center"
+            android:text="캘린더 영역"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar_main"
+            tools:text="캘린더 영역" />
+
+        <TextView
+            android:id="@+id/tv_home_welcome"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="김보연 님, 반가워!\n카페바라와 함께 오늘 파이팅해요"
+            android:textAppearance="@style/TextAppearance.TitleSmall"
+            app:layout_constraintStart_toStartOf="@id/gl_start"
+            app:layout_constraintTop_toBottomOf="@id/horizontal_calendar"
+            tools:text="김보연 님, 반가워!\n카페바라와 함께 오늘 파이팅해요" />
+
+        <ImageView
+            android:id="@+id/iv_home_image"
+            android:layout_width="0dp"
+            android:layout_height="157dp"
+            android:layout_marginTop="15dp"
+            android:background="@color/orange25"
+            app:layout_constraintEnd_toEndOf="@id/gl_end"
+            app:layout_constraintStart_toStartOf="@id/tv_home_welcome"
+            app:layout_constraintTop_toBottomOf="@id/tv_home_welcome" />
+
+        <Spinner
+            android:layout_width="0dp"
+            android:layout_height="42dp"
+            android:background="@drawable/background_spinner"
+            app:layout_constraintEnd_toEndOf="@id/iv_home_image"
+            app:layout_constraintStart_toStartOf="@id/iv_home_image"
+            app:layout_constraintTop_toBottomOf="@id/iv_home_image" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
