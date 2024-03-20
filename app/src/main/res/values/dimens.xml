@@ -12,4 +12,7 @@
 
     <!-- Widget Size -->
     <dimen name="button_height">54dp</dimen>
+
+    <!--bnv height-->
+    <dimen name="bottom_navi_height">60dp</dimen>
 </resources>
