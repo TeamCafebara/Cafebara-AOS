@@ -4,6 +4,8 @@ import android.content.Intent
 import android.os.Bundle
 import com.omg.cafebara.R
 import com.omg.cafebara.databinding.ActivityTestBinding
+import com.omg.cafebara.presentation.employee.home.notice.HomeNoticeActivity.Companion.NOTICE_ID
+import com.omg.cafebara.presentation.employee.home.notice.HomeNoticeActivity.Companion.NOTICE_ID_DEFAULT
 import com.omg.cafebara.util.base.BindingActivity
 
 class TestActivity: BindingActivity<ActivityTestBinding>(R.layout.activity_test) {
@@ -16,7 +18,7 @@ class TestActivity: BindingActivity<ActivityTestBinding>(R.layout.activity_test)
 
     private fun clickNotice() {
         binding.tvTestNotice.setOnClickListener {
-            changeNoticeView(0)
+            changeNoticeView(NOTICE_ID_DEFAULT)
         }
 
         binding.tvTestNoticeDetail.setOnClickListener {
@@ -26,7 +28,7 @@ class TestActivity: BindingActivity<ActivityTestBinding>(R.layout.activity_test)
 
     private fun changeNoticeView(id: Int) {
         val intent = Intent(this, HomeNoticeActivity::class.java)
-        intent.putExtra("noticeId", id)
+        intent.putExtra(NOTICE_ID, id)
         startActivity(intent)
     }
 }

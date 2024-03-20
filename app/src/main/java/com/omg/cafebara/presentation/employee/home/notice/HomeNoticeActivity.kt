@@ -1,7 +1,6 @@
 package com.omg.cafebara.presentation.employee.home.notice
 
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.viewModels
 import androidx.fragment.app.Fragment
 import com.omg.cafebara.R
@@ -20,7 +19,7 @@ class HomeNoticeActivity :
         binding.toolbarHomeNotice.title = getString(R.string.home_information_toolbar)
 
         initClickBackBtn()
-        initGetData()
+        initMakeNoticeView()
     }
 
     private fun initClickBackBtn() {
@@ -29,16 +28,17 @@ class HomeNoticeActivity :
         }
     }
 
-    private fun initGetData() {
-        viewModel.setSelectedNoticeId(intent.getIntExtra("noticeId", 0))
+    private fun initMakeNoticeView() {
+        viewModel.setSelectedNoticeId(intent.getIntExtra(NOTICE_ID, NOTICE_ID_DEFAULT))
 
-        initChooseFragment()
+        makeFragment()
     }
 
-    private fun initChooseFragment() {
+    private fun makeFragment() {
         initFragment(HomeNoticeListFragment())
+
         viewModel.selectedNoticeId.observe(this) {
-            if (viewModel.selectedNoticeId.value != 0) {
+            if (viewModel.selectedNoticeId.value != NOTICE_ID_DEFAULT) {
                 changeFragment(HomeNoticeDetailFragment())
             }
             Timber.d("selected notice Id -> $it")
@@ -63,5 +63,7 @@ class HomeNoticeActivity :
 
     companion object {
         const val FRAGMENT_TAG = "FRAGMENT_TAG"
+        const val NOTICE_ID = "noticeId"
+        const val NOTICE_ID_DEFAULT = 0
     }
 }

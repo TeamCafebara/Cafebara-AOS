@@ -14,7 +14,6 @@ import com.omg.cafebara.util.view.dpToFloat
 class HomeNoticeListFragment :
     BindingFragment<FragmentHomeNoticeListBinding>(R.layout.fragment_home_notice_list) {
 
-//    private val viewModel by viewModels<HomeNoticeListViewModel>()
     private lateinit var viewModel: HomeNoticeViewModel
 
     private var _noticeAdapter: NoticeAdapter? = null
@@ -29,13 +28,18 @@ class HomeNoticeListFragment :
         initMakeNoticeAdapter()
     }
 
-
     private fun initMakeNoticeAdapter() {
         _noticeAdapter = NoticeAdapter()
         binding.rcvHomeNoticeList.apply {
             layoutManager = LinearLayoutManager(requireContext())
             adapter = noticeAdapter
-            addItemDecoration(CustomItemDecoration( dpToFloat(1), dpToFloat(20), context.colorOf(R.color.gray2)))
+            addItemDecoration(
+                CustomItemDecoration(
+                    dpToFloat(ITEM_DECORATION_HEIGHT),
+                    dpToFloat(ITEM_DECORATION_PADDING),
+                    context.colorOf(R.color.gray2)
+                )
+            )
         }
 
         setNoticeList()
@@ -52,5 +56,10 @@ class HomeNoticeListFragment :
         noticeAdapter.setOnNoticeDataClickListener {
             viewModel.setSelectedNoticeId(it.noticeId)
         }
+    }
+
+    companion object {
+        private const val ITEM_DECORATION_HEIGHT = 1
+        private const val ITEM_DECORATION_PADDING = 20
     }
 }
