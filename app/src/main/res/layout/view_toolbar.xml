@@ -14,7 +14,7 @@
         android:id="@+id/layout_toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/white"
+        android:background="@color/background"
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
@@ -39,8 +39,9 @@
             android:textAppearance="@style/TextAppearance.TitleLarge"
             android:textColor="@color/gray7"
             app:layout_constraintBottom_toBottomOf="@+id/iv_back"
-            app:layout_constraintStart_toEndOf="@id/iv_back"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/iv_back"
+            app:layout_constraintEnd_toEndOf="parent"
             tools:text="공지 사항" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
