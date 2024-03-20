@@ -2,12 +2,14 @@ package com.omg.cafebara.presentation.employee.home.notice
 
 import android.os.Bundle
 import android.view.View
-import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.omg.cafebara.R
 import com.omg.cafebara.databinding.FragmentHomeNoticeListBinding
 import com.omg.cafebara.util.base.BindingFragment
+import com.omg.cafebara.util.context.colorOf
+import com.omg.cafebara.util.view.CustomItemDecoration
+import com.omg.cafebara.util.view.dpToFloat
 
 class HomeNoticeListFragment :
     BindingFragment<FragmentHomeNoticeListBinding>(R.layout.fragment_home_notice_list) {
@@ -27,11 +29,13 @@ class HomeNoticeListFragment :
         initMakeNoticeAdapter()
     }
 
+
     private fun initMakeNoticeAdapter() {
         _noticeAdapter = NoticeAdapter()
         binding.rcvHomeNoticeList.apply {
             layoutManager = LinearLayoutManager(requireContext())
             adapter = noticeAdapter
+            addItemDecoration(CustomItemDecoration( dpToFloat(1), dpToFloat(20), context.colorOf(R.color.gray2)))
         }
 
         setNoticeList()
