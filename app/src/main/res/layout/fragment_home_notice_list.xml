@@ -6,7 +6,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.omg.cafebara.presentation.employee.home.notice.HomeNoticeListViewModel" />
+            type="com.omg.cafebara.presentation.employee.home.notice.HomeNoticeViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

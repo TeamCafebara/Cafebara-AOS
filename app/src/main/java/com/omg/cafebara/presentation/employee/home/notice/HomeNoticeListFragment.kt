@@ -3,6 +3,7 @@ package com.omg.cafebara.presentation.employee.home.notice
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.omg.cafebara.R
 import com.omg.cafebara.databinding.FragmentHomeNoticeListBinding
@@ -11,7 +12,8 @@ import com.omg.cafebara.util.base.BindingFragment
 class HomeNoticeListFragment :
     BindingFragment<FragmentHomeNoticeListBinding>(R.layout.fragment_home_notice_list) {
 
-    private val viewModel by viewModels<HomeNoticeListViewModel>()
+//    private val viewModel by viewModels<HomeNoticeListViewModel>()
+    private lateinit var viewModel: HomeNoticeViewModel
 
     private var _noticeAdapter: NoticeAdapter? = null
     private val noticeAdapter
@@ -19,6 +21,7 @@ class HomeNoticeListFragment :
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        viewModel = ViewModelProvider(requireActivity())[HomeNoticeViewModel::class.java]
         binding.viewModel = viewModel
 
         initMakeNoticeAdapter()
