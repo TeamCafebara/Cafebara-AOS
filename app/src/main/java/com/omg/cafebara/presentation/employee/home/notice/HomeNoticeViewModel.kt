@@ -40,5 +40,4 @@ class HomeNoticeViewModel : ViewModel() {
     fun setSelectedNoticeId(id: Int) {
         _selectedNoticeId.value = id
     }
-
 }

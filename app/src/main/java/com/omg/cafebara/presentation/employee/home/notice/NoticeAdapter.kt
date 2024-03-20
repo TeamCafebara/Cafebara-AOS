@@ -31,7 +31,7 @@ class NoticeAdapter :
     }
 
     fun setOnNoticeDataClickListener(listener: (NoticeData) -> Unit) {
-         onItemClickListener = listener
+        onItemClickListener = listener
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NoticeViewHolder {

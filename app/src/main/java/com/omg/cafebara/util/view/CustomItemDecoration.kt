@@ -9,8 +9,8 @@ class CustomItemDecoration(
     private val height: Float,
     private val padding: Float,
     @ColorInt
-    private val color: Int
-): RecyclerView.ItemDecoration() {
+    private val color: Int,
+) : RecyclerView.ItemDecoration() {
 
     private val paint = Paint()
 
@@ -32,5 +32,4 @@ class CustomItemDecoration(
             c.drawRect(left, top, right, bottom, paint)
         }
     }
-
 }

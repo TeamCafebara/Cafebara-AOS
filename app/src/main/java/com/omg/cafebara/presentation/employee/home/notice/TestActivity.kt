@@ -22,7 +22,7 @@ class TestActivity : BindingActivity<ActivityTestBinding>(R.layout.activity_test
         }
 
         binding.tvTestNoticeDetail.setOnClickListener {
-            changeNoticeView(2)     // TODO: 해당하는 아이디
+            changeNoticeView(2) // TODO: 해당하는 아이디
         }
     }
 
