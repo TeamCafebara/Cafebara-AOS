@@ -33,3 +33,8 @@ class ItemDiffCallback<T : Any>(
     override fun areContentsTheSame(oldItem: T, newItem: T): Boolean =
         onContentsTheSame(oldItem, newItem)
 }
+
+fun View.dpToFloat(dp: Int): Float {
+    val scales = resources.displayMetrics.density
+    return dp * scales
+}

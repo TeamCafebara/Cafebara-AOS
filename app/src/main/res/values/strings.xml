@@ -19,4 +19,8 @@
     <string name="dialog_middle_alert_context">대타 요청에 대한 답변 및 공지사항에 관한\n알림이 보내질 예정이에요!</string>
     <string name="dialog_middle_left_btn">안할래요</string>
     <string name="dialog_middle_right_btn">할래요</string>
+
+    <!--home notice-->
+    <string name="home_information_toolbar">공지사항</string>
+    <string name="home_information_notice_type">필독</string>
 </resources>

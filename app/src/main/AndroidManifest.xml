@@ -21,6 +21,21 @@
             android:exported="true"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity">
+
+        </activity>
+
+        <activity
+            android:name=".presentation.employee.home.notice.HomeNoticeActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" >
+        </activity>
+
+        <activity
+            android:name=".presentation.employee.home.notice.TestActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
