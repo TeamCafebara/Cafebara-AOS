@@ -11,23 +11,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/gl_start"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_begin="20dp"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/gl_end"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintGuide_end="20dp" />
-
-
         <include
             android:id="@+id/toolbar_main"
             layout="@layout/view_toolbar"
@@ -60,35 +43,325 @@
             app:layout_constraintTop_toBottomOf="@id/toolbar_main"
             tools:text="캘린더 영역" />
 
-        <TextView
-            android:id="@+id/tv_home_welcome"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="김보연 님, 반가워!\n카페바라와 함께 오늘 파이팅해요"
-            android:textAppearance="@style/TextAppearance.TitleSmall"
-            app:layout_constraintStart_toStartOf="@id/gl_start"
-            app:layout_constraintTop_toBottomOf="@id/horizontal_calendar"
-            tools:text="김보연 님, 반가워!\n카페바라와 함께 오늘 파이팅해요" />
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/horizontal_calendar">
 
-        <ImageView
-            android:id="@+id/iv_home_image"
-            android:layout_width="0dp"
-            android:layout_height="157dp"
-            android:layout_marginTop="15dp"
-            android:background="@color/orange25"
-            app:layout_constraintEnd_toEndOf="@id/gl_end"
-            app:layout_constraintStart_toStartOf="@id/tv_home_welcome"
-            app:layout_constraintTop_toBottomOf="@id/tv_home_welcome" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp">
 
-        <Spinner
-            android:layout_width="0dp"
-            android:layout_height="42dp"
-            android:background="@drawable/background_spinner"
-            app:layout_constraintEnd_toEndOf="@id/iv_home_image"
-            app:layout_constraintStart_toStartOf="@id/iv_home_image"
-            app:layout_constraintTop_toBottomOf="@id/iv_home_image" />
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/gl_start"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_end="391dp"
+                    app:layout_constraintStart_toStartOf="parent" />
 
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/gl_end"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintGuide_end="20dp" />
+
+                <TextView
+                    android:id="@+id/tv_home_welcome"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="김보연 님, 반가워!\n카페바라와 함께 오늘 파이팅해요"
+                    android:textAppearance="@style/TextAppearance.TitleSmall"
+                    app:layout_constraintStart_toStartOf="@id/gl_start"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="김보연 님, 반가워!\n카페바라와 함께 오늘 파이팅해요" />
+
+                <ImageView
+                    android:id="@+id/iv_home_image"
+                    android:layout_width="0dp"
+                    android:layout_height="157dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@color/orange25"
+                    app:layout_constraintEnd_toEndOf="@id/gl_end"
+                    app:layout_constraintStart_toStartOf="@id/tv_home_welcome"
+                    app:layout_constraintTop_toBottomOf="@id/tv_home_welcome" />
+
+                <Spinner
+                    android:id="@+id/sp_home_staff_cafe"
+                    android:layout_width="0dp"
+                    android:layout_height="42dp"
+                    android:background="@drawable/background_spinner"
+                    app:layout_constraintEnd_toEndOf="@id/iv_home_image"
+                    app:layout_constraintStart_toStartOf="@id/iv_home_image"
+                    app:layout_constraintTop_toBottomOf="@id/iv_home_image" />
+
+                <TextView
+                    android:id="@+id/tv_home_staff_notice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="29dp"
+                    android:paddingVertical="12dp"
+                    android:text="공지사항"
+                    android:textAppearance="@style/TextAppearance.TitleSmall"
+                    app:layout_constraintStart_toStartOf="@id/tv_home_welcome"
+                    app:layout_constraintTop_toBottomOf="@id/sp_home_staff_cafe" />
+
+                <TextView
+                    android:id="@+id/tv_home_staff_notice_more"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="더보기"
+                    android:textAppearance="@style/TextAppearance.LabelSmall"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_home_staff_notice"
+                    app:layout_constraintEnd_toEndOf="@id/sp_home_staff_cafe"
+                    app:layout_constraintTop_toTopOf="@id/tv_home_staff_notice" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_home_staff_notice_first"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:background="@drawable/shape_white_fill_gray1_stroke_10_rect"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_home_staff_notice">
+
+                    <ImageView
+                        android:id="@+id/iv_home_staff_notice_icon_first"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginVertical="18dp"
+                        android:layout_marginStart="10dp"
+                        android:src="@drawable/ic_home_staff_notice_special"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/cl_home_staff_notice_label_first"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="50dp"
+                        android:layout_marginTop="15dp"
+                        android:background="@drawable/shape_orange_fill_28_rect"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:id="@+id/tv_home_staff_notice_label_first"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginHorizontal="10dp"
+                            android:text="필독"
+                            android:textAppearance="@style/TextAppearance.LabelSmall"
+                            android:textColor="@color/white"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <TextView
+                        android:id="@+id/tv_home_staff_notice_content_first"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="15dp"
+                        android:text="생크림 안 만들고 가면 해고입니다."
+                        android:textAppearance="@style/TextAppearance.LabelSmall"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="@id/cl_home_staff_notice_label_first" />
+
+                    <ImageView
+                        android:id="@+id/iv_home_staff_notice_arrow_first"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="21dp"
+                        android:layout_marginEnd="8dp"
+                        android:src="@drawable/ic_home_staff_notice_arrow"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_home_staff_notice_second"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/shape_white_fill_gray1_stroke_10_rect"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cl_home_staff_notice_first">
+
+                    <ImageView
+                        android:id="@+id/iv_home_staff_notice_icon_second"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginVertical="18dp"
+                        android:layout_marginStart="10dp"
+                        android:src="@drawable/ic_home_staff_notice_normal"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/cl_home_staff_notice_label_second"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="50dp"
+                        android:layout_marginTop="15dp"
+                        android:background="@drawable/shape_gray2_fill_28_rect"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:id="@+id/tv_home_staff_notice_label_second"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginHorizontal="10dp"
+                            android:text="일반"
+                            android:textAppearance="@style/TextAppearance.LabelSmall"
+                            android:textColor="@color/white"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <TextView
+                        android:id="@+id/tv_home_staff_notice_content_second"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="15dp"
+                        android:text="내일은 휴무입니다. 나오지 마세요."
+                        android:textAppearance="@style/TextAppearance.LabelSmall"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="@id/cl_home_staff_notice_label_second" />
+
+                    <ImageView
+                        android:id="@+id/iv_home_staff_notice_arrow_second"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="21dp"
+                        android:layout_marginEnd="8dp"
+                        android:src="@drawable/ic_home_staff_notice_arrow"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_home_staff_notice_none"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:background="@drawable/shape_white_fill_gray1_stroke_10_rect"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cl_home_staff_notice_second">
+
+                    <ImageView
+                        android:id="@+id/iv_home_staff_notice_icon_none"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginVertical="18dp"
+                        android:layout_marginStart="10dp"
+                        android:src="@drawable/ic_home_staff_notice_none"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_home_staff_notice_content_none"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="50dp"
+                        android:text="올라온 공지사항이 없어요."
+                        android:textAppearance="@style/TextAppearance.LabelSmall"
+                        android:textColor="@color/gray3"
+                        app:layout_constraintBottom_toBottomOf="@id/iv_home_staff_notice_icon_none"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/iv_home_staff_notice_icon_none" />
+
+                    <ImageView
+                        android:id="@+id/iv_home_staff_notice_arrow_none"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="21dp"
+                        android:layout_marginEnd="8dp"
+                        android:src="@drawable/ic_home_staff_notice_arrow"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/tv_home_staff_mission_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginBottom="170dp"
+                    android:text="오늘의 할 일"
+                    android:textAppearance="@style/TextAppearance.TitleSmall"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/gl_start"
+                    app:layout_constraintTop_toBottomOf="@id/cl_home_staff_notice_none" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_home_staff_mission_content"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/shape_white_fill_gray1_stroke_10_rect"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_home_staff_mission_title">
+
+                    <TextView
+                        android:id="@+id/tv_home_staff_mission_alarm"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="22dp"
+                        android:layout_marginTop="23dp"
+                        android:text="김보연 님,\n사장님이 보낸 오늘의 미션이 도착했어요!"
+                        android:textAppearance="@style/TextAppearance.LabelMedium"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/cl_home_staff_mission_check"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="17dp"
+                        android:layout_marginBottom="20dp"
+                        android:background="@drawable/shape_white_fill_orange_stroke_44_rect"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_home_staff_mission_alarm">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="17dp"
+                            android:layout_marginVertical="6dp"
+                            android:text="바로 확인하기"
+                            android:textAppearance="@style/TextAppearance.LabelSmall"
+                            android:textColor="@color/orange100"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ScrollView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </layout>
