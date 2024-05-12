@@ -4,7 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+        <import type="android.view.View" />
 
+        <variable
+            name="homeViewModel"
+            type="com.omg.cafebara.presentation.employee.home.HomeViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -128,7 +132,8 @@
                     android:background="@drawable/shape_white_fill_gray1_stroke_10_rect"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/tv_home_staff_notice">
+                    app:layout_constraintTop_toBottomOf="@id/tv_home_staff_notice"
+                    android:visibility="@{homeViewModel.mockHomeNotice.size() >= 1 ? View.VISIBLE : View.GONE}">
 
                     <ImageView
                         android:id="@+id/iv_home_staff_notice_icon_first"
@@ -194,7 +199,8 @@
                     android:background="@drawable/shape_white_fill_gray1_stroke_10_rect"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/cl_home_staff_notice_first">
+                    app:layout_constraintTop_toBottomOf="@id/cl_home_staff_notice_first"
+                    android:visibility="@{homeViewModel.mockHomeNotice.size() == 2 ? View.VISIBLE : View.GONE}">>
 
                     <ImageView
                         android:id="@+id/iv_home_staff_notice_icon_second"
@@ -259,7 +265,8 @@
                     android:background="@drawable/shape_white_fill_gray1_stroke_10_rect"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/cl_home_staff_notice_second">
+                    app:layout_constraintTop_toBottomOf="@id/cl_home_staff_notice_second"
+                    android:visibility="@{homeViewModel.mockHomeNotice.size() == 0 ? View.VISIBLE : View.GONE}">>
 
                     <ImageView
                         android:id="@+id/iv_home_staff_notice_icon_none"
