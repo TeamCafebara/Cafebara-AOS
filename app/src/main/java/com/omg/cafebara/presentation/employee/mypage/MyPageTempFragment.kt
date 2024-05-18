@@ -1,9 +1,11 @@
 package com.omg.cafebara.presentation.employee.mypage
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import com.omg.cafebara.R
 import com.omg.cafebara.databinding.FragmentMypageTempBinding
+import com.omg.cafebara.presentation.employee.mypage.leavecafe.LeaveCafeActivity
 import com.omg.cafebara.util.base.BindingFragment
 
 class MyPageTempFragment :
@@ -11,5 +13,14 @@ class MyPageTempFragment :
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        initClickLeaveCafeBtn()
+    }
+
+    private fun initClickLeaveCafeBtn() {
+        val intent = Intent(requireActivity(), LeaveCafeActivity::class.java)
+        binding.layoutMypageLeaveCafe.setOnClickListener {
+            startActivity(intent)
+        }
     }
 }
