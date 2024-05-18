@@ -36,6 +36,7 @@ class LeaveCafeActivity : BindingActivity<ActivityMypageLeaveCafeBinding>(R.layo
             setOnItemClickListener(object : LeaveCafeAdapter.OnItemClickListener {
                 override fun onItemClick(item: CafeList, position: Int) {
                     Timber.d("클릭한 업장 -> ${item.cafeId}")
+                    viewModel.setLeaveCafeBtnEnabled(true)
                 }
             })
         }

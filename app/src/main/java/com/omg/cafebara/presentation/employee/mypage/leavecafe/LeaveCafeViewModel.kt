@@ -29,4 +29,12 @@ class LeaveCafeViewModel: ViewModel() {
 
     val mockCafeList: LiveData<ArrayList<CafeList>>
         get() = _mockCafeList
+
+    private val _leaveCafeBtnEnabled = MutableLiveData<Boolean>()
+    val leaveCafeBtnEnabled: LiveData<Boolean>
+        get() = _leaveCafeBtnEnabled
+
+    fun setLeaveCafeBtnEnabled(boolean: Boolean) {
+        _leaveCafeBtnEnabled.value = boolean
+    }
 }
