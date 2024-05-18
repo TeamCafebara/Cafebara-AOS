@@ -29,4 +29,10 @@
         <item name="android:width">0dp</item>
         <item name="cornerRadius">12dp</item>
     </style>
+
+    <style name="custom_switch" parent="Widget.Material3.CompoundButton.MaterialSwitch">
+        <item name="thumbTint">@color/white</item>
+        <item name="trackColor">@color/gray2</item>
+        <item name="android:enabled">true</item>
+    </style>
 </resources>

@@ -2,4 +2,8 @@
     <string name="app_name">Cafebara</string>
     <string name="home_information_toolbar">공지사항</string>
     <string name="home_information_notice_type">필독</string>
+
+<!--    my page-->
+    <string name="mypage_sub_title">김보연님,\n안녕하세요.</string>
+    <string name="mypage_title">마이페이지</string>
 </resources>
