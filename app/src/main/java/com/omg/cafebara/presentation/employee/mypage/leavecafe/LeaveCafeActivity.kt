@@ -5,7 +5,9 @@ import androidx.activity.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.omg.cafebara.R
 import com.omg.cafebara.databinding.ActivityMypageLeaveCafeBinding
+import com.omg.cafebara.domain.model.CafeList
 import com.omg.cafebara.util.base.BindingActivity
+import timber.log.Timber
 
 class LeaveCafeActivity : BindingActivity<ActivityMypageLeaveCafeBinding>(R.layout.activity_mypage_leave_cafe) {
 
@@ -30,7 +32,13 @@ class LeaveCafeActivity : BindingActivity<ActivityMypageLeaveCafeBinding>(R.layo
     }
 
     private fun initMakeCafeAdapter() {
-        _leaveCafeAdapter = LeaveCafeAdapter()
+        _leaveCafeAdapter = LeaveCafeAdapter().apply {
+            setOnItemClickListener(object : LeaveCafeAdapter.OnItemClickListener {
+                override fun onItemClick(item: CafeList, position: Int) {
+                    Timber.d("클릭한 업장 -> ${item.cafeId}")
+                }
+            })
+        }
         binding.rcvMypageLeaveCafeList.apply {
             layoutManager = LinearLayoutManager(context)
             adapter = leaveCafeAdapter
