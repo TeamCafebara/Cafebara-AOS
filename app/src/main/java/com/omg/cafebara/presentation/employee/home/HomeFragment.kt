@@ -3,16 +3,12 @@ package com.omg.cafebara.presentation.employee.home
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.omg.cafebara.R
 import com.omg.cafebara.databinding.FragmentHomeBinding
 import com.omg.cafebara.presentation.employee.home.notice.HomeNoticeActivity
-import com.omg.cafebara.presentation.employee.home.notice.HomeNoticeDetailFragment
-import com.omg.cafebara.presentation.employee.home.notice.HomeNoticeListFragment
 import com.omg.cafebara.presentation.employee.todo.TodoFragment
 import com.omg.cafebara.util.base.BindingFragment
-import timber.log.Timber
 
 class HomeFragment : BindingFragment<FragmentHomeBinding>(R.layout.fragment_home) {
     private val homeViewModel by viewModels<HomeViewModel>()
@@ -41,7 +37,6 @@ class HomeFragment : BindingFragment<FragmentHomeBinding>(R.layout.fragment_home
 
     private fun moveToDetailFragment() {
         homeViewModel.selectedNoticeId.observe(viewLifecycleOwner) { noticeId ->
-
             binding.ivHomeStaffNoticeArrowFirst.setOnClickListener {
                 moveToDetailNotice(noticeId)
             }
