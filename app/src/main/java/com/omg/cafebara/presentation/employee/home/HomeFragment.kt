@@ -40,40 +40,21 @@ class HomeFragment : BindingFragment<FragmentHomeBinding>(R.layout.fragment_home
     }
 
     private fun moveToDetailFragment() {
-        val noticeId = 1
+        homeViewModel.selectedNoticeId.observe(viewLifecycleOwner) { noticeId ->
 
-        binding.ivHomeStaffNoticeArrowFirst.setOnClickListener {
-            moveToDetailNotice(noticeId)
-        }
+            binding.ivHomeStaffNoticeArrowFirst.setOnClickListener {
+                moveToDetailNotice(noticeId)
+            }
 
-        binding.ivHomeStaffNoticeArrowSecond.setOnClickListener {
-            moveToDetailNotice(noticeId)
-        }
+            binding.ivHomeStaffNoticeArrowSecond.setOnClickListener {
+                moveToDetailNotice(noticeId)
+            }
 
-        binding.ivHomeStaffNoticeArrowNone.setOnClickListener {
-            moveToDetailNotice(noticeId)
+            binding.ivHomeStaffNoticeArrowNone.setOnClickListener {
+                moveToDetailNotice(noticeId)
+            }
         }
     }
-
-//    private fun moveToDetailFragment() {
-//        homeViewModel.selectedNoticeId.observe(viewLifecycleOwner) { noticeId ->
-//            if (noticeId != HomeNoticeActivity.NOTICE_ID_DEFAULT) {
-//                binding.ivHomeStaffNoticeArrowFirst.setOnClickListener {
-//                    moveToDetailNotice(noticeId)
-//                }
-//
-//                binding.ivHomeStaffNoticeArrowSecond.setOnClickListener {
-//                    moveToDetailNotice(noticeId)
-//                }
-//
-//            } else {
-//                binding.ivHomeStaffNoticeArrowNone.setOnClickListener {
-//                    moveToDetailNotice(noticeId)
-//                }
-//            }
-//            Timber.d("selected notice Id -> $noticeId")
-//        }
-//    }
 
     private fun moveToDetailNotice(noticeId: Int) {
         val intent = Intent(requireContext(), HomeNoticeActivity::class.java).apply {
