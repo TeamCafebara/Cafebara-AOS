@@ -20,6 +20,7 @@ class HomeNoticeActivity :
 
         initClickBackBtn()
         initMakeNoticeView()
+        homeToDetailNotice()
     }
 
     private fun initClickBackBtn() {
@@ -61,9 +62,27 @@ class HomeNoticeActivity :
             .commit()
     }
 
+    private fun homeToDetailNotice() {
+        val showDetailFragment = intent.getBooleanExtra(EXTRA_SHOW_DETAIL_FRAGMENT, false)
+        val noticeId = intent.getIntExtra(EXTRA_SELECTED_NOTICE_ID, NOTICE_ID_DEFAULT)
+
+        if (showDetailFragment) {
+            viewModel.setSelectedNoticeId(noticeId)
+            showDetailFragment()
+        } else {
+            initMakeNoticeView()
+        }
+    }
+
+    private fun showDetailFragment() {
+        changeFragment(HomeNoticeDetailFragment())
+    }
+
     companion object {
         const val FRAGMENT_TAG = "FRAGMENT_TAG"
         const val NOTICE_ID = "noticeId"
         const val NOTICE_ID_DEFAULT = 0
+        const val EXTRA_SELECTED_NOTICE_ID = "selected_notice_id"
+        const val EXTRA_SHOW_DETAIL_FRAGMENT = "show_detail_fragment"
     }
 }
