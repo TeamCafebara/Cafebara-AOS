@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.omg.cafebara.domain.model.CafeList
 
-class LeaveCafeViewModel: ViewModel() {
+class LeaveCafeViewModel : ViewModel() {
 
     private val _mockCafeList: MutableLiveData<ArrayList<CafeList>> = MutableLiveData(
         arrayListOf(
@@ -23,7 +23,7 @@ class LeaveCafeViewModel: ViewModel() {
                 3,
                 "김이박최명김이박최명김이박최명카페에",
                 "2024.02.12"
-            ),
+            )
         )
     )
 

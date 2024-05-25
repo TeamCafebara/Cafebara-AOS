@@ -6,7 +6,7 @@ import androidx.fragment.app.DialogFragment
 import androidx.viewbinding.ViewBinding
 import com.omg.cafebara.util.view.OriginalDialog
 
-abstract class BindingDialog: DialogFragment() {
+abstract class BindingDialog : DialogFragment() {
 
     protected var _binding: ViewBinding? = null
     protected var title: String? = null
@@ -26,7 +26,7 @@ abstract class BindingDialog: DialogFragment() {
         setDoBtnText()
         setCancelBtnText()
         setDoBtnClick { doBtnAction(); dismiss() }
-        setCancelBtnClick{ cancelBtnAction(); dismiss() }
+        setCancelBtnClick { cancelBtnAction(); dismiss() }
     }
 
     abstract fun setTitle()
@@ -45,7 +45,7 @@ abstract class BindingDialog: DialogFragment() {
             doBtnText: String,
             cancelBtnText: String,
             doBtnAction: () -> Unit,
-            cancelBtnAction: () -> Unit
+            cancelBtnAction: () -> Unit,
         ): BindingDialog {
             val dialog = OriginalDialog()
             return dialog.apply {

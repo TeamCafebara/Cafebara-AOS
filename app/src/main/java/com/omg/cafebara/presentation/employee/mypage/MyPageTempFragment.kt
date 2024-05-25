@@ -2,8 +2,6 @@ package com.omg.cafebara.presentation.employee.mypage
 
 import android.content.Intent
 import android.os.Bundle
-import android.provider.Settings.ACTION_APPLICATION_SETTINGS
-import android.provider.Settings.ACTION_APP_NOTIFICATION_SETTINGS
 import android.provider.Settings.ACTION_SETTINGS
 import android.view.View
 import com.omg.cafebara.R
@@ -13,7 +11,6 @@ import com.omg.cafebara.presentation.employee.mypage.leavecafe.LeaveCafeActivity
 import com.omg.cafebara.util.base.BindingDialog
 import com.omg.cafebara.util.base.BindingDialog.Companion.DIALOG
 import com.omg.cafebara.util.base.BindingFragment
-import timber.log.Timber
 
 class MyPageTempFragment :
     BindingFragment<FragmentMypageTempBinding>(R.layout.fragment_mypage_temp) {
@@ -38,7 +35,7 @@ class MyPageTempFragment :
                     cancelBtnText = "안할래요",
                     doBtnText = "할래요",
                     doBtnAction = {
-                        val intent = Intent(ACTION_SETTINGS);
+                        val intent = Intent(ACTION_SETTINGS)
                         startActivity(intent)
                     },
                     cancelBtnAction = {

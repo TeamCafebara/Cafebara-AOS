@@ -10,10 +10,10 @@ import com.omg.cafebara.databinding.ItemLeaveCafeListBinding
 import com.omg.cafebara.domain.model.CafeList
 import com.omg.cafebara.util.view.ItemDiffCallback
 
-class LeaveCafeAdapter: ListAdapter<CafeList, LeaveCafeAdapter.LeaveCafeViewHolder>(
+class LeaveCafeAdapter : ListAdapter<CafeList, LeaveCafeAdapter.LeaveCafeViewHolder>(
     ItemDiffCallback(
-        onContentsTheSame = {old, new -> old == new},
-        onItemsTheSame = {old, new -> old.cafeId == new.cafeId}
+        onContentsTheSame = { old, new -> old == new },
+        onItemsTheSame = { old, new -> old.cafeId == new.cafeId }
     )
 ) {
 
@@ -29,7 +29,8 @@ class LeaveCafeAdapter: ListAdapter<CafeList, LeaveCafeAdapter.LeaveCafeViewHold
         this.onItemClickListener = listener
     }
 
-    inner class LeaveCafeViewHolder(private val binding: ItemLeaveCafeListBinding) : RecyclerView.ViewHolder(binding.root) {
+    inner class LeaveCafeViewHolder(private val binding: ItemLeaveCafeListBinding) :
+        RecyclerView.ViewHolder(binding.root) {
         fun onBind(data: CafeList) {
             binding.item = data
 
@@ -55,16 +56,27 @@ class LeaveCafeAdapter: ListAdapter<CafeList, LeaveCafeAdapter.LeaveCafeViewHold
 
     private fun changeItemColor(
         binding: ItemLeaveCafeListBinding,
-        selected: Boolean
+        selected: Boolean,
     ) {
         when (selected) {
             true -> {
                 binding.root.setBackgroundResource(R.drawable.shape_blue10_fill_blue_line_8_rect)
-                binding.tvLeaveCafeName.setTextColor(ContextCompat.getColor(binding.root.context, R.color.blue100))
+                binding.tvLeaveCafeName.setTextColor(
+                    ContextCompat.getColor(
+                        binding.root.context,
+                        R.color.blue100
+                    )
+                )
             }
+
             false -> {
                 binding.root.setBackgroundResource(R.drawable.shape_gray1_line_8_rect)
-                binding.tvLeaveCafeName.setTextColor(ContextCompat.getColor(binding.root.context, R.color.gray7))
+                binding.tvLeaveCafeName.setTextColor(
+                    ContextCompat.getColor(
+                        binding.root.context,
+                        R.color.gray7
+                    )
+                )
             }
         }
     }

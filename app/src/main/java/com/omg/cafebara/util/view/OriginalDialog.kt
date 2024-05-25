@@ -9,7 +9,7 @@ import android.view.ViewGroup
 import com.omg.cafebara.databinding.FragmentBaseDialogBinding
 import com.omg.cafebara.util.base.BindingDialog
 
-class OriginalDialog: BindingDialog() {
+class OriginalDialog : BindingDialog() {
 
     private val binding: FragmentBaseDialogBinding
         get() = requireNotNull(_binding as FragmentBaseDialogBinding)
@@ -17,7 +17,7 @@ class OriginalDialog: BindingDialog() {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View? {
         _binding = FragmentBaseDialogBinding.inflate(inflater, container, false)
         dialog?.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))

@@ -6,7 +6,8 @@ import com.omg.cafebara.R
 import com.omg.cafebara.databinding.ActivityMypageAddCafeBinding
 import com.omg.cafebara.util.base.BindingActivity
 
-class AddCafeActivity: BindingActivity<ActivityMypageAddCafeBinding>(R.layout.activity_mypage_add_cafe) {
+class AddCafeActivity :
+    BindingActivity<ActivityMypageAddCafeBinding>(R.layout.activity_mypage_add_cafe) {
 
     private val viewModel by viewModels<AddCafeViewModel>()
 

@@ -1,12 +1,9 @@
 package com.omg.cafebara.presentation.employee.home.notice
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.omg.cafebara.R
 import com.omg.cafebara.databinding.ActivityTestBinding
-import com.omg.cafebara.presentation.employee.home.notice.HomeNoticeActivity.Companion.NOTICE_ID
-import com.omg.cafebara.presentation.employee.home.notice.HomeNoticeActivity.Companion.NOTICE_ID_DEFAULT
 import com.omg.cafebara.presentation.employee.mypage.MyPageTempFragment
 import com.omg.cafebara.util.base.BindingActivity
 
