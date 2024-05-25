@@ -36,7 +36,7 @@ class OriginalDialog: BindingDialog() {
         if (contentVisible == true) {
             binding.tvDialogBaseContent.visibility = View.VISIBLE
         } else {
-            binding.tvDialogBaseContent.visibility = View.INVISIBLE
+            binding.tvDialogBaseContent.visibility = View.GONE
         }
     }
 
