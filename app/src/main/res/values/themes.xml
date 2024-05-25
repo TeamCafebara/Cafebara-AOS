@@ -30,9 +30,10 @@
         <item name="cornerRadius">12dp</item>
     </style>
 
-    <style name="custom_switch" parent="Widget.Material3.CompoundButton.MaterialSwitch">
+    <style name="custom_switch" parent="Widget.Material3.CompoundButton.Switch">
         <item name="thumbTint">@color/white</item>
-        <item name="trackColor">@color/gray2</item>
+        <item name="track">@drawable/switch_alarm_background</item>
+        <item name="android:thumb">@drawable/switch_alarm_thumb</item>
         <item name="android:enabled">true</item>
     </style>
 </resources>

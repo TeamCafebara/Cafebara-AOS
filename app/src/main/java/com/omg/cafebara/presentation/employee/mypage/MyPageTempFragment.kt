@@ -2,6 +2,9 @@ package com.omg.cafebara.presentation.employee.mypage
 
 import android.content.Intent
 import android.os.Bundle
+import android.provider.Settings.ACTION_APPLICATION_SETTINGS
+import android.provider.Settings.ACTION_APP_NOTIFICATION_SETTINGS
+import android.provider.Settings.ACTION_SETTINGS
 import android.view.View
 import com.omg.cafebara.R
 import com.omg.cafebara.databinding.FragmentMypageTempBinding
@@ -10,6 +13,7 @@ import com.omg.cafebara.presentation.employee.mypage.leavecafe.LeaveCafeActivity
 import com.omg.cafebara.util.base.BindingDialog
 import com.omg.cafebara.util.base.BindingDialog.Companion.DIALOG
 import com.omg.cafebara.util.base.BindingFragment
+import timber.log.Timber
 
 class MyPageTempFragment :
     BindingFragment<FragmentMypageTempBinding>(R.layout.fragment_mypage_temp) {
@@ -25,7 +29,7 @@ class MyPageTempFragment :
     }
 
     private fun initClickAlarmSwitch() {
-        binding.switchMypageAlarm.setOnCheckedChangeListener { buttonView, isChecked ->
+        binding.switchMypageAlarm.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked) {
                 BindingDialog.Builder().build(
                     title = "카페바라 알림을 받아보실 건가요?",
@@ -33,7 +37,10 @@ class MyPageTempFragment :
                     contentVisible = true,
                     cancelBtnText = "안할래요",
                     doBtnText = "할래요",
-                    doBtnAction = {},
+                    doBtnAction = {
+                        val intent = Intent(ACTION_SETTINGS);
+                        startActivity(intent)
+                    },
                     cancelBtnAction = {
                         binding.switchMypageAlarm.isChecked = false
                     }
