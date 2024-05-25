@@ -1,8 +1,6 @@
 package com.omg.cafebara.presentation.employee.mypage
 
 import android.content.Intent
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.View
 import com.omg.cafebara.R
