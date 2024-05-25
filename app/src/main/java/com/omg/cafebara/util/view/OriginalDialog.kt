@@ -53,6 +53,6 @@ class OriginalDialog: BindingDialog() {
     }
 
     override fun setCancelBtnClick(action: () -> Unit) {
-        binding.btnDialogBaseDo.setOnClickListener { action() }
+        binding.btnDialogBaseCancel.setOnClickListener { action() }
     }
 }

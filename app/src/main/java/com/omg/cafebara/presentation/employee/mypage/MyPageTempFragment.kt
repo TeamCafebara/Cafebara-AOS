@@ -17,10 +17,29 @@ class MyPageTempFragment :
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        initClickAlarmSwitch()
         initClickLeaveCafeBtn()
         initClickAddCafeBtn()
         clickLogOut()
         clickWithDraw()
+    }
+
+    private fun initClickAlarmSwitch() {
+        binding.switchMypageAlarm.setOnCheckedChangeListener { buttonView, isChecked ->
+            if (isChecked) {
+                BindingDialog.Builder().build(
+                    title = "카페바라 알림을 받아보실 건가요?",
+                    content = "대타 요청에 대한 답변 및 공지사항에 관한\n알림이 보내질 예정이에요!",
+                    contentVisible = true,
+                    cancelBtnText = "안할래요",
+                    doBtnText = "할래요",
+                    doBtnAction = {},
+                    cancelBtnAction = {
+                        binding.switchMypageAlarm.isChecked = false
+                    }
+                ).show(parentFragmentManager, DIALOG)
+            }
+        }
     }
 
     private fun initClickLeaveCafeBtn() {

@@ -26,7 +26,7 @@ abstract class BindingDialog: DialogFragment() {
         setDoBtnText()
         setCancelBtnText()
         setDoBtnClick { doBtnAction(); dismiss() }
-        setCancelBtnClick(doBtnAction)
+        setCancelBtnClick{ cancelBtnAction(); dismiss() }
     }
 
     abstract fun setTitle()
