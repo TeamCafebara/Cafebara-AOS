@@ -4,9 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="employType"
             type="com.omg.cafebara.presentation.type.EmployType" />
+
         <variable
             name="viewModel"
             type="com.omg.cafebara.presentation.employee.auth.NameInputViewModel" />
@@ -63,7 +65,9 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:background="@{viewModel.name.length() > 0? @drawable/background_name_not_edited : @drawable/background_name_edited}"
-                android:hint="실제 이름으로 입력해주세요!"
+                android:hint="@{employType.hintRes}"
+                android:inputType="text"
+                android:maxLength="18"
                 android:paddingVertical="15dp"
                 android:paddingStart="14dp"
                 android:text="@={viewModel.name}"
@@ -71,7 +75,8 @@
                 android:textColorHint="@color/gray2"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="실제 이름으로 입력해주세요" />
 
             <ImageView
                 android:id="@+id/iv_erase_all"
