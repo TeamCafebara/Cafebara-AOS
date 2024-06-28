@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="employType"
+            type="com.omg.cafebara.presentation.type.EmployType" />
+
+        <variable
+            name="viewModel"
+            type="com.omg.cafebara.presentation.employee.auth.NameInputViewModel" />
+
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_input_name"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/layout_toolbar"
+            layout="@layout/view_toolbar" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/spacing20" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/spacing20" />
+
+        <TextView
+            android:id="@+id/tv_introduction_code"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:text="아래 초대코드를 통해\n함께 하는 분들을 초대해 보아요"
+            android:textAppearance="@style/TextAppearance.HeadLine"
+            android:textColor="@color/gray7"
+            app:layout_constraintEnd_toEndOf="@id/gl_end"
+            app:layout_constraintStart_toStartOf="@id/gl_start"
+            app:layout_constraintTop_toBottomOf="@id/layout_toolbar"
+            tools:text="아래 초대코드를 통해\n함께 하는 분들을 초대해 보아요" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_code"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:background="@drawable/shape_generate_code"
+            app:layout_constraintEnd_toEndOf="@id/gl_end"
+            app:layout_constraintStart_toStartOf="@id/gl_start"
+            app:layout_constraintTop_toBottomOf="@id/tv_introduction_code">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="31dp"
+                android:textAppearance="@style/TextAppearance.TitleSmall"
+                android:textColor="@color/gray7"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="21312313213213131" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_copy_code"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/shape_code"
+            app:layout_constraintStart_toStartOf="@id/layout_code"
+            app:layout_constraintTop_toBottomOf="@id/layout_code">
+
+            <ImageView
+                android:id="@+id/iv_copy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="12dp"
+                android:layout_marginStart="22dp"
+                android:src="@drawable/ic_copy"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_copy_code"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="21dp"
+                android:text="초대코드 복사"
+                android:textAppearance="@style/TextAppearance.BodyMedium1"
+                android:textColor="@color/gray5"
+                app:layout_constraintBottom_toBottomOf="@id/iv_copy"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/iv_copy"
+                app:layout_constraintTop_toTopOf="@id/iv_copy" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_send_code"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/shape_code"
+            app:layout_constraintEnd_toEndOf="@id/layout_code"
+            app:layout_constraintTop_toBottomOf="@id/layout_code">
+
+            <ImageView
+                android:id="@+id/iv_share"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="12dp"
+                android:layout_marginStart="22dp"
+                android:src="@drawable/ic_share"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_share_code"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="21dp"
+                android:text="초대코드 공유"
+                android:textAppearance="@style/TextAppearance.BodyMedium1"
+                android:textColor="@color/gray5"
+                app:layout_constraintBottom_toBottomOf="@id/iv_share"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/iv_share"
+                app:layout_constraintTop_toTopOf="@id/iv_share" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_next"
+            style="@style/Widget.FullButton.Basic"
+            android:layout_width="0dp"
+            android:layout_marginBottom="8dp"
+            android:backgroundTint="@{viewModel.name.length() > 0 ? @color/blue100 :@color/gray1}"
+            android:enabled="@{viewModel.name.length() > 0}"
+            android:text="@string/sign_view_to_next"
+            android:textAppearance="@style/TextAppearance.BodyMedium1"
+            android:textColor="@{viewModel.name.length() > 0 ? @color/white :@color/gray2}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/gl_end"
+            app:layout_constraintStart_toStartOf="@id/gl_start" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
