@@ -43,7 +43,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".presentation.employee.auth.NameInputActivity"
+            android:name=".presentation.employee.auth.EmployeeNameInputActivity"
             android:exported="true"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
@@ -54,6 +54,21 @@
             tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".presentation.employee.auth.WelcomeActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name=".presentation.employer.auth.EmployerNameInputActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name=".presentation.employer.auth.EmployerStoreNameInputActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name=".presentation.employer.auth.EmployerGenerateCodeActivity"
             android:exported="true"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
