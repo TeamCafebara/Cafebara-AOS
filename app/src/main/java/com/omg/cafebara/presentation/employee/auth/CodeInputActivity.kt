@@ -1,5 +1,6 @@
 package com.omg.cafebara.presentation.employee.auth
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.activity.viewModels
@@ -33,6 +34,9 @@ class CodeInputActivity : BindingActivity<ActivityInputCodeBinding>(R.layout.act
         binding.layoutToolbar.ivBack.setOnClickListener {
             finish()
         }
+        binding.btnNext.setOnClickListener {
+            moveToWelcome()
+        }
     }
 
     private fun addObservers() {
@@ -44,10 +48,13 @@ class CodeInputActivity : BindingActivity<ActivityInputCodeBinding>(R.layout.act
         codeViewModel.codeValidation.observe(this) {
             if (it) {
                 binding.etInputCode.setBackgroundResource(R.drawable.background_code_valid)
-            }
-            else{
+            } else {
                 binding.etInputCode.setBackgroundResource(R.drawable.background_code_error)
             }
         }
+    }
+
+    private fun moveToWelcome() {
+        startActivity(Intent(this, WelcomeActivity::class.java))
     }
 }
