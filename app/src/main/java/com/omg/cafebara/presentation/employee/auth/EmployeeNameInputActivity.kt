@@ -12,7 +12,8 @@ import com.omg.cafebara.util.context.hideKeyboard
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class NameInputActivity : BindingActivity<ActivityInputNameBinding>(R.layout.activity_input_name) {
+class EmployeeNameInputActivity :
+    BindingActivity<ActivityInputNameBinding>(R.layout.activity_input_name) {
     private val nameViewModel: NameInputViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
